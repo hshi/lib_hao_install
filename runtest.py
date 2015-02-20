@@ -13,7 +13,7 @@ elif(typ=="serial"):
   for dirname in glob.glob('*test'):
       subprocess.call('./'+dirname, shell=True )
       sys.stdout.flush()
-elif(typ=="storm"):
+elif(typ=="sciclone"):
   for dirname in glob.glob('*test'):
       subprocess.call('mvp2run ./'+dirname, shell=True )
       sys.stdout.flush()
