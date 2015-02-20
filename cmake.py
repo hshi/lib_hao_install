@@ -6,14 +6,21 @@ typ  = sys.argv[1]
 dirc = sys.argv[2]
 if(typ=="mpi"):
   com="cmake -DCMAKE_CXX_COMPILER=mpic++ \
-             -DCOMPILER_EXTRA_FLAG='-Wall -O3 -std=c++11 -fopenmp -m64' \
-             -DCOMPILER_EXTRA_DEF='-DMPI_HAO -DMKL_ILP64' \
-             -DMODULE_EXTRA_PATH='~/cmake/Modules/general_local;~/cmake/Modules/lib_hao/mpi' \
+             -DCOMPILER_EXTRA_FLAG:STRING='-Wall -O3 -std=c++11' \
+             -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
+             -DMODULE_EXTRA_PATH:STRING='~/cmake/Modules' \
              -DCMAKE_INSTALL_PREFIX:PATH=~/lib_hao/mpi "+dirc
 elif(typ=="serial"):
-  com="cmake -DCOMPILER_EXTRA_FLAG='-Wall -O3 -std=c++11 -fopenmp -m64' \
-             -DCOMPILER_EXTRA_DEF='-DMKL_ILP64' \
-             -DMODULE_EXTRA_PATH='~/cmake/Modules/general_local;~/cmake/Modules/lib_hao/serial' \
+  com="cmake -DCOMPILER_EXTRA_FLAG:STRING='-Wall -O3 -std=c++11' \
+             -DCOMPILER_EXTRA_DEF:STRING=' '\
+             -DMODULE_EXTRA_PATH:STRING='~/cmake/Modules' \
              -DCMAKE_INSTALL_PREFIX:PATH=~/lib_hao/serial "+dirc
+elif(typ=="storm"):
+  os.environ['SPRNG'] = "~/sprng2.0"
+  com="cmake -DCMAKE_CXX_COMPILER=mpicxx \
+             -DCOMPILER_EXTRA_FLAG:STRING='-Wall -O3 -march=barcelona -std=c++11' \
+             -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
+             -DMODULE_EXTRA_PATH:STRING='~/cmake/Modules' \
+             -DCMAKE_INSTALL_PREFIX:PATH=~/lib_hao/mpi "+dirc
 
 subprocess.call(com, shell=True )
