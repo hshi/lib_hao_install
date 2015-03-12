@@ -1,1 +1,31 @@
-These are the scripts for easy installation of all the entire lib_hao.
+These are the scripts for easy installation of all the entire lib_hao:
+
+1. Create a directory named "cmake" in home(~), download Modules to cmake directory.
+
+2. Create a directory named "lib_hao", download lib_hao_install and all the libraries to lib_hao
+
+3. Make sure you have installed FFTW, SPRNG, GMP, MKL/ACML and set their path in environment, e.g. export FFTW='/opt/fftw'
+   If you do not want to change .bashrc file, you can also add in lib_hao_install/cmake.py, e.g. os.environ['FFTW'] = "/opt/fftw"
+
+4. Eneter lib_hao_install
+   for MPI type:
+             python install storm
+   for Serial type:
+             python install hu
+
+   There are other type for different cluster，do not use that if you do not have account on these cluster.
+   for Storm type:
+             python install storm    
+   for Hurricane type:
+             python install hu
+
+5. Enter installed library: for mpi verision the default path is: ~/lib_hao/mpi/test
+    run the command to test the library:
+    python Path/to/lib_hao_install/runtest.py mpi
+
+    If you are in sciclone, ask for interactive mode, eg:
+    qsub -X -I -l walltime=1:00:00 -l nodes=1:wind:ppn=16
+    python Path/to/lib_hao_install/runtest.py sciclone
+
+
+Change the script in this directory to meet your requiement.
