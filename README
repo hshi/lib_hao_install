@@ -2,7 +2,7 @@ These are the scripts for easy installation of all the entire lib_hao:
 
 1. Create a directory named "cmake" in home(~), download Modules to cmake directory.
 
-2. Create a directory named "lib_hao", download lib_hao_install and all the libraries to lib_hao
+2. Create a directory named "lib_hao", download lib_hao_install and all the libraries *_lib_hao to lib_hao
 
 3. Make sure you have installed FFTW, SPRNG, GMP, MKL/ACML and set their path in environment, e.g. export FFTW='/opt/fftw'
    If you do not want to change .bashrc file, you can also add in lib_hao_install/cmake.py, e.g. os.environ['FFTW'] = "/opt/fftw"
