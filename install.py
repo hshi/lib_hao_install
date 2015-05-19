@@ -11,7 +11,7 @@ subprocess.call('rm -rf build', shell=True)
 subprocess.call('mkdir build', shell=True)
 os.chdir('build')
 
-for dirname in glob.glob(path+'/../*lib_hao'):
+for dirname in glob.glob(path+'/*lib_hao'):
     subprocess.call('rm -rf *', shell=True)
     subprocess.call(com + dirname, shell=True )
     subprocess.call('make', shell=True )
