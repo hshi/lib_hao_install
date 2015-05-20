@@ -1,28 +1,32 @@
-These are the scripts for easy installation of all the entire lib_hao:
+These are the scripts for easy installation of the entire lib_hao:
 
-1. Download lib_hao_install : "git clone https://github.com/hshi/lib_hao_install" 
-
-
-2. Download all the lib_hao libraries: "python download.py"
+1. Download lib_hao_install
+   Open a terminal, run: "git clone https://github.com/hshi/lib_hao_install" 
 
 
-3. Install the lib_hao libraries: "python install type"
+2. Download all the lib_hao libraries 
+   Go to lib_hao_install, run: "python download.py"
+
+
+3. Install the lib_hao libraries
+   Stay in the lib_hao_install, run: "python install type"
    "type" can be: mpi, serial, storm, hu, hu+magma
-   You can build your own "type" in cmake.py for different platform.
+   You can build your own "type" in cmake.py for different platform, read the "Build your own type" below.
 
 
-4. Test the lib hao:
+4. Test the lib hao
    0) If you are in a cluster, first require an interactive job, e.g.
       "qsub -X -I -l walltime=1:00:00 -l nodes=1:wind:ppn=16"
 
-   1) Go to the lib_hao install prefix directory (can be found in cmake.py)
+   1) Go to the directory where you install the libraries (can be found in cmake.py, set by -DCMAKE_INSTALL_PREFIX:PATH)
    
    2) "cd test"
  
    3) "python Path/to/lib_hao_install/runtest.py type"   "type" can be found in runtest.py.
 
 
-5) Clean the lib_hao_install directory: "python clean.py"
+5) Clean the lib_hao_install directory
+   Go to lib_hao_install, run: "python clean.py"
 
 
 
@@ -38,8 +42,20 @@ Dependence:
    3) mpi_lib_hao
        Need mpi.
 
-   4. random_lib_hao
+   4) random_lib_hao
        Need sprng library, and SPRNG=/PATH/TO/SPRNG, e.g. export SPRNG='/home/username/sprng/sprng2.0'
        Need gmp library, and GMP=/PATH/TO/GMP, e.g. export GMP='/usr/local/gmp-4.3.2'.
 
-Feel free to change the script for your own application, enjoy your coding.
+
+Build your own type:
+   You can write your own type in cmake.py, here are a few tips.
+   1. set the compiler, e.g. -DCMAKE_CXX_COMPILER=mpic++
+   2. set the compiler flag, e.g. -DCOMPILER_EXTRA_FLAG:STRING='-Wall -O3 -std=c++11'
+   3. if you want to install the mpi version, use: -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO'
+   4. set the custom cmake module path, it is automatically downloaded in ~/cmake/Modules, if you change the module path to '/MY/MODULE/PATH', use: -DMODULE_EXTRA_PATH:STRING='/MY/MODULE/PATH'
+   5. set the path where you want to install the libraries, e.g. -DCMAKE_INSTALL_PREFIX:PATH=~/lib_hao/mpi
+   6. if you want to use magma, use: -DUSE_MAGMA=on
+   7. set path for your dependent libraries, e.g. os.environ['SPRNG'] = "~/sprng2.0", os.environ['FFTW'] = "/opt/fftw", check "Dependence" for details.
+
+
+Feel free to change the scripts for your own application, enjoy your coding.
