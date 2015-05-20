@@ -36,5 +36,5 @@ elif(typ=="hu+magma"):
              -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
              -DUSE_MAGMA=on \
              -DMODULE_EXTRA_PATH:STRING='~/cmake/Modules' \
-             -DCMAKE_INSTALL_PREFIX:PATH=~/lib_hao/mpi "+dirc
+             -DCMAKE_INSTALL_PREFIX:PATH=~/lib_hao/mpimagma "+dirc
 subprocess.call(com, shell=True )
