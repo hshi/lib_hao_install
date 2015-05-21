@@ -58,4 +58,4 @@ Build your own type:
    7. set path for your dependent libraries, e.g. os.environ['SPRNG'] = "~/sprng2.0", os.environ['FFTW'] = "/opt/fftw", check "Dependence" for details.
 
 
-Feel free to change the scripts for your own application, enjoy your coding.
+This project is licensed under the terms of the MIT license, enjoy your coding.
