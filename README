@@ -38,6 +38,7 @@ Dependence:
        Need mkl library, and MKL=/PATH/TO/MKL, e.g. export MKL='/opt/intel/mkl' "
        Or need acml library, and ACML=/PATH/TO/ACML, e.g. export ACML='/usr/local/acml-5.1.0/' 
        Need magma library(optional), and MAGMA=/PATH/TO/MAGMA, e.g. export MAGMA='/usr/local/intel64/nehalem/magma-1.3.0'
+       Note: magma need cuda.
 
    3) mpi_lib_hao
        Need mpi.

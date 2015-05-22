@@ -50,7 +50,6 @@ elif(typ=="titan+magma"):
   os.environ['SPRNG'] = os.environ['SPRNG_DIR']
   os.environ['FFTW']  = "/opt/fftw/3.3.4.0/interlagos"
   os.environ['ACML']  = "/opt/acml/5.3.1/gfortran64"
-  os.environ['CUDA']  = os.environ['CRAY_CUDATOOLKIT_DIR']
   os.environ['MAGMA'] ="/ccs/home/hshi/magma/magma-1.6.1"
   com="cmake -DCMAKE_CXX_COMPILER=CC \
              -DCOMPILER_EXTRA_FLAG:STRING='-Wall -O3 -fopenmp -std=c++11' \
