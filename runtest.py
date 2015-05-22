@@ -17,3 +17,7 @@ elif(typ=="sciclone"):
   for dirname in glob.glob('*test'):
       subprocess.call('mvp2run ./'+dirname, shell=True )
       sys.stdout.flush()
+elif(typ=="titan"):
+  for dirname in glob.glob('*test'):
+      subprocess.call('aprun ./'+dirname, shell=True )
+      sys.stdout.flush()
