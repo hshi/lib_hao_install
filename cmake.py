@@ -42,21 +42,21 @@ elif(typ=="titan"):
   os.environ['FFTW']  = "/opt/fftw/3.3.4.0/interlagos"
   os.environ['ACML']  = "/opt/acml/5.3.1/gfortran64"
   com="cmake -DCMAKE_CXX_COMPILER=CC \
-             -DCOMPILER_EXTRA_FLAG:STRING='-Wall -O3 -fopenmp -m64 -std=c++11' \
+             -DCOMPILER_EXTRA_FLAG:STRING='-Wall -O3 -fopenmp -std=c++11' \
              -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
              -DMODULE_EXTRA_PATH:STRING='~/cmake/Modules' \
              -DCMAKE_INSTALL_PREFIX:PATH=~/lib_hao/mpi "+dirc
 elif(typ=="titan+magma"):
   os.environ['SPRNG'] = os.environ['SPRNG_DIR']
   os.environ['FFTW']  = "/opt/fftw/3.3.4.0/interlagos"
-  os.environ['CUDA']  = os.environ['CRAY_CUDATOOLKIT_DIR']
   os.environ['ACML']  = "/opt/acml/5.3.1/gfortran64"
-  os.environ['MAGMA'] ="/sw/xk6/magma/1.3/cle4.0_gnu4.7.2_cuda5.0_acml5.2.0"
-  com="cmake -DCMAKE_CXX_COMPILER=ftn \
+  os.environ['CUDA']  = os.environ['CRAY_CUDATOOLKIT_DIR']
+  os.environ['MAGMA'] ="/ccs/home/hshi/magma/magma-1.6.1"
+  com="cmake -DCMAKE_CXX_COMPILER=CC \
              -DCOMPILER_EXTRA_FLAG:STRING='-Wall -O3 -fopenmp -std=c++11' \
              -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
              -DUSE_MAGMA=on \
              -DMODULE_EXTRA_PATH:STRING='~/cmake/Modules' \
-             -DCMAKE_INSTALL_PREFIX:PATH=~/lib_hao/mpi "+dirc
+             -DCMAKE_INSTALL_PREFIX:PATH=~/lib_hao/mpimagma "+dirc
 
 subprocess.call(com, shell=True )
