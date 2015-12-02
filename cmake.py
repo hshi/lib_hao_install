@@ -18,7 +18,7 @@ elif(typ=="serial"):
 elif(typ=="storm"):
   os.environ['SPRNG'] = "~/sprng2.0"
   com="cmake -DCMAKE_CXX_COMPILER=mpicxx \
-             -DCOMPILER_EXTRA_FLAG:STRING='-Wall -O3 -march=barcelona -std=c++11' \
+             -DCOMPILER_EXTRA_FLAG:STRING='-Wall -O3 -march=opteron -std=c++11' \
              -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO' \
              -DMODULE_EXTRA_PATH:STRING='~/cmake/Modules' \
              -DCMAKE_INSTALL_PREFIX:PATH=~/lib_hao/mpi "+dirc

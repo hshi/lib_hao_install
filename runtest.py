@@ -6,18 +6,18 @@ import glob
 
 typ  = sys.argv[1]
 if(typ=="mpi"):
-  for dirname in glob.glob('*test'): 
-      subprocess.call('mpirun -np 4 '+dirname, shell=True )
+  for testname in glob.glob('*test'): 
+      subprocess.call('mpirun -np 4 '+testname, shell=True )
       sys.stdout.flush()
 elif(typ=="serial"):
-  for dirname in glob.glob('*test'):
-      subprocess.call('./'+dirname, shell=True )
+  for testname in glob.glob('*test'):
+      subprocess.call('./'+testname, shell=True )
       sys.stdout.flush()
-elif(typ=="sciclone"):
-  for dirname in glob.glob('*test'):
-      subprocess.call('mvp2run ./'+dirname, shell=True )
+elif(typ=="mvp"):
+  for testname in glob.glob('*test'):
+      subprocess.call('mvp2run ./'+testname, shell=True )
       sys.stdout.flush()
-elif(typ=="titan"):
-  for dirname in glob.glob('*test'):
-      subprocess.call('aprun ./'+dirname, shell=True )
+elif(typ=="ap"):
+  for testname in glob.glob('*test'):
+      subprocess.call('aprun ./'+testname, shell=True )
       sys.stdout.flush()

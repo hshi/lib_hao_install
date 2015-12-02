@@ -10,7 +10,7 @@ These are the scripts for easy installation of the entire lib_hao:
 
 3. Install the lib_hao libraries
    Stay in the lib_hao_install, run: "python install.py type"
-   "type" can be: mpi, serial, storm, hu, hu+magma
+   "type" can be: mpi, serial, storm, hu, hu+magma, ...
    You can build your own "type" in cmake.py for different platform, read the "Build your own type" below.
 
 
