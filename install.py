@@ -16,7 +16,7 @@ for dirname in glob.glob(path+'/*lib_hao'):
     subprocess.call(com + dirname, shell=True )
     subprocess.call('make', shell=True )
     subprocess.call('make install', shell=True )
-
+    print "\n\n"
 
 os.chdir('..')
 subprocess.call('rm -rf build', shell=True)
