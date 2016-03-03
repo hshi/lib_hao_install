@@ -43,7 +43,7 @@ subprocess.call('git clone https://github.com/hshi/random_lib_hao_0', shell=True
 print "\033[1m"  "Dowload time_lib_hao_0:" "\033[0m"
 subprocess.call('git clone https://github.com/hshi/time_lib_hao_0', shell=True)
 
-print "\033[1m"  "Dowload thread_mc_data_manipulate_lib_hao_1:" "\033[0m"
+print "\033[1m"  "Dowload thread_mc_data_manipulate_lib_hao_1:" "\033[92m"
 print "1st level Lib_hao, need matrix_lib_hao_0, mpi_lib_hao_0, and kahan_error_analysis_lib_hao_0." "\033[0m"
 subprocess.call('git clone https://github.com/hshi/thread_mc_data_manipulate_lib_hao_1', shell=True)
 
