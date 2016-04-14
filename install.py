@@ -5,7 +5,7 @@ import subprocess
 import glob
 
 typ  = sys.argv[1]
-com='../cmake.py '+ typ + ' '
+com='python ../cmake.py '+ typ + ' '
 path = os.path.abspath(os.path.dirname(__file__))
 subprocess.call('rm -rf build', shell=True)
 subprocess.call('mkdir build', shell=True)
