@@ -7,6 +7,7 @@ import glob
 typ               = sys.argv[1]
 
 install_dirc_name = '~/lib'
+subprocess.call('mkdir -p '+install_dirc_name, shell=True)
 
 print "\033[1m" "Install custom cmake modules to "+install_dirc_name+"/Modules." "\033[0m"
 subprocess.call('rm -rf '+install_dirc_name+'/Modules', shell=True)
