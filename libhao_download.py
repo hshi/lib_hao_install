@@ -8,7 +8,7 @@ print "\033[1m" "Download custom cmake modules:" "\033[0m"
 subprocess.call('git clone https://github.com/hshi/Modules', shell=True)
 
 print "\033[1m" "Download cmake_code_script:" "\033[0m"
-subprocess.call('git clone git@github.com:hshi/cmake_code_script', shell=True)
+subprocess.call('git clone https://github.com/hshi/cmake_code_script.git', shell=True)
 
 print "\033[1m" "Download fftw_lib_hao_0:" "\033[92m"
 print "Need fftw library, and FFTW=/PATH/TO/FFTW, e.g. export FFTW='/opt/fftw' " "\033[0m"
