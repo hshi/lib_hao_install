@@ -17,9 +17,6 @@ print "\033[1m" "Install cmake_code_script to "+install_dirc_name+"/cmake_code_s
 subprocess.call('rm -rf '+install_dirc_name+'/cmake_code_script', shell=True)
 subprocess.call('cp -r cmake_code_script '+install_dirc_name, shell=True)
 
-#print "\033[1m" "Delete directory: "+install_dirc_name+"/lib_hao/"+typ+"." "\033[0m"
-#subprocess.call('rm -rf '+install_dirc_name+"/lib_hao/"+typ, shell=True)
-
 print "\033[1m" "Install lib_hao level 0 to "+install_dirc_name+"/lib_hao/"+typ+"." "\033[0m"
 subprocess.call("python cmake_code_script/lib_install.py "+typ+" '*lib_hao_0' "+ install_dirc_name+"/lib_hao", shell=True )
 

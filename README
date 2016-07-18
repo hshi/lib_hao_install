@@ -1,7 +1,7 @@
 These are the scripts for easy installation of the entire lib_hao:
 
 1. Download lib_hao_install
-   Open a terminal, run: "git clone https://github.com/hshi/lib_hao_install" 
+   Open a terminal, run: "git clone https://github.com/hshi/lib_hao_install.git" 
 
 
 2. Download all the lib_hao libraries and related scripts 
@@ -10,7 +10,7 @@ These are the scripts for easy installation of the entire lib_hao:
 
 3. Install the lib_hao libraries
    Stay in the lib_hao_install, run: "python libhao_install.py type"
-   "type" can be: mpi, serial, storm, hu, humagma, ...
+   "type" can be: mpi, serial, storm, hu, ...
    You can build your own "type" in cmake.py for different platform, read the "Build your own type" below.
    The libraries are installed in ~/lib/lib_hao/type by default. You can change it by reset "install_dirc_name" in libhao_install.py. After that, you need to set "LIBHAO" to the directory in cmake_code_script/cmake.py.
    note: cmake_code_script will be copied to install_dirc_name (~/lib default).
@@ -26,18 +26,18 @@ These are the scripts for easy installation of the entire lib_hao:
    4) Use the runtest.py script in cmake_code_script to test 
      "python Path/to/lib_hao_install/cmake_code_script/runtest.py type"   "type" can be found in runtest.py.
 
-5) Clean the lib_hao_install directory (Optional, skip if you want to keep the source code)
+5) (Optional!!!!! Skip if you want to keep the source code.) Clean the lib_hao_install directory
    Go to lib_hao_install, run: "python cmake_code_script/clean.py"
-
 
 
 Dependence:
    1) fftw_lib_hao 
        need fftw library, and FFTW=/PATH/TO/FFTW, e.g. export FFTW='/opt/fftw'
 
-   2) matrix_lib_hao 
+   2) tensor_lib_hao 
        Need mkl library, and MKL=/PATH/TO/MKL, e.g. export MKL='/opt/intel/mkl' "
        Or need acml library, and ACML=/PATH/TO/ACML, e.g. export ACML='/usr/local/acml-5.1.0/' 
+       Or need blas lapack library, use find FindLAPACK.cmake in cmake system.
        Need magma library(optional), and MAGMA=/PATH/TO/MAGMA, e.g. export MAGMA='/usr/local/intel64/nehalem/magma-1.3.0'
        Note: magma need cuda.
 
@@ -55,7 +55,6 @@ Build your own type:
    2. set the compiler flag, e.g. -DCMAKE_CXX_FLAGS='-Wall -O3'
    3. if you want to install the mpi version, use: -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO'
    4. set the custom cmake module path, it is automatically downloaded in ~/lib/Modules, if you change the module path to '/MY/MODULE/PATH', use: -DMODULE_EXTRA_PATH:STRING='/MY/MODULE/PATH'
-   5. if you want to use magma, use: -DUSE_MAGMA=on
-   6. set path for your dependent libraries, e.g. os.environ['SPRNG'] = "~/sprng2.0", os.environ['FFTW'] = "/opt/fftw", check "Dependence" for details.
+   5. set path for your dependent libraries, e.g. os.environ['SPRNG'] = "~/sprng2.0", os.environ['FFTW'] = "/opt/fftw", check "Dependence" for details.
 
 This project is licensed under the terms of the MIT license, enjoy coding.
