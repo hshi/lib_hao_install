@@ -10,7 +10,7 @@ These are the scripts for easy installation of the entire lib_hao:
 
 3. Install the lib_hao libraries
    Stay in the lib_hao_install, run: "python libhao_install.py type"
-   "type" can be: mpi, serial, storm, hu, ...
+   "type" can be: mpi, serial, storm, hu, humagma, ...
    You can build your own "type" in cmake.py for different platform, read the "Build your own type" below.
    The libraries are installed in ~/lib/lib_hao/type by default. You can change it by reset "install_dirc_name" in libhao_install.py. After that, you need to set "LIBHAO" to the directory in cmake_code_script/cmake.py.
    note: cmake_code_script will be copied to install_dirc_name (~/lib default).
@@ -55,6 +55,7 @@ Build your own type:
    2. set the compiler flag, e.g. -DCMAKE_CXX_FLAGS='-Wall -O3'
    3. if you want to install the mpi version, use: -DCOMPILER_EXTRA_DEF:STRING='-DMPI_HAO'
    4. set the custom cmake module path, it is automatically downloaded in ~/lib/Modules, if you change the module path to '/MY/MODULE/PATH', use: -DMODULE_EXTRA_PATH:STRING='/MY/MODULE/PATH'
-   5. set path for your dependent libraries, e.g. os.environ['SPRNG'] = "~/sprng2.0", os.environ['FFTW'] = "/opt/fftw", check "Dependence" for details.
+   5. if you want to use magma, use: -DUSE_MAGMA=on
+   6. set path for your dependent libraries, e.g. os.environ['SPRNG'] = "~/sprng2.0", os.environ['FFTW'] = "/opt/fftw", check "Dependence" for details.
 
 This project is licensed under the terms of the MIT license, enjoy coding.
